@@ -222,6 +222,7 @@ header .container {
 }
 .user-authorization {
     position: relative;
+    cursor: pointer;
 }
 .authorization {
     display: flex;
@@ -321,6 +322,7 @@ header .container {
     height: 35px;
     background-image: url("img/Лупа.png");
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 .search:hover {
     background-image: url("img/Лупа-dark.png");
@@ -379,9 +381,7 @@ header .container {
     border-radius: 50px;
     vertical-align: middle;
 }
-/* .slider {
 
-} */
 .slider-list {
     margin: 0;
     padding: 0;
@@ -490,6 +490,7 @@ header .container {
     padding: 7px 13px 20px 13px;
     margin: 0;
     text-align: center;
+    cursor: pointer;
 }
 .price-and-image p {
     margin: 0;
@@ -627,6 +628,7 @@ header .container {
     height: 40px;
     border: 1px solid #b2b2b2;
     border-radius: 5px;
+    cursor: pointer;
 }
 input::placeholder {
     padding: 15px 10px;
@@ -703,7 +705,7 @@ input::placeholder {
     margin-right: 10px;
     width: 9px;
     height: 14px;
-    background-image: url("img/_стрелка.png");
+    background-image: url("img/page-left.png");
 }
 .pagination-list::after {
     content: "";
@@ -711,7 +713,7 @@ input::placeholder {
     margin-left: 10px;
     width: 9px;
     height: 14px;
-    background-image: url("img/_стрелка-право.png");
+    background-image: url("img/page-right.png");
 }
 .pagination-list li {
     padding: 3px 10px;
@@ -891,6 +893,7 @@ footer .container {
 }
 .filter-sorting select {
     font-family: inherit;
+    cursor: pointer;
 }
 .filter-sorting select:hover {
     color: #323232;
@@ -933,6 +936,7 @@ footer .container {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     border: none; 
+    cursor: pointer;
 }
 .filter-price input:in-range::-webkit-slider-runnable-track {
     height: 4px;
@@ -983,9 +987,11 @@ footer .container {
 }
 .fat-content li input[type="radio"] {
     opacity: 0;
+    cursor: pointer;
 }
 .fat-content li label {
     position: relative;
+    cursor: pointer;
 }
 .fat-content li label::before {
     content: "";
@@ -1034,9 +1040,11 @@ footer .container {
 }
 .filling li input[type="checkbox"] {
     opacity: 0;
+    cursor: pointer;
 }
 .filling li label {
     position: relative;
+    cursor: pointer;
 }
 .filling li label::before {
     position: absolute;
@@ -1088,6 +1096,7 @@ footer .container {
     border: 2px solid white;
     border-radius: 20px;
     padding: 7px 28px;
+    cursor: pointer;
 }
 .form-button input:hover {
     font-family: "Roboto", sans-serif;
