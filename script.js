@@ -4,18 +4,73 @@ const userAuthorization = document.querySelector('.user-authorization');
 const formAuthorization = document.querySelector('.authorization');
 const pageLists = document.querySelectorAll('.pagination-number');
 
-searchButton.addEventListener("click", () => {
+//Функция для поиска
+let closeSerch = () => {
     searchString.classList.toggle("hide");
+}
+
+//Открыть форму поиска
+searchButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeSerch();
 })
+
 searchString.addEventListener("click", () => {
-    searchString.classList.toggle("hide");
+    closeSerch();
 })
-userAuthorization.addEventListener("click", () => {
+
+//Закрыть с помощью Esc
+document.addEventListener("keydown", (e) => {
+    if (e.code === 'Escape' && !searchString.classList.contains('hide')) {
+        closeSerch();
+    }
+})
+
+//Закрыть кликом вне формы
+document.addEventListener("click", (e) => {
+    const target = e.target;
+    const openedPopup = searchString.classList.contains('hide');
+    if(!openedPopup && target !== openedPopup ) {
+        closeSerch();
+    }
+})
+
+//Функция для формы входа
+let closeUserForm = () => {
     formAuthorization.classList.toggle("hide");
+}
+
+//Открыть форму входа
+userAuthorization.addEventListener("click", (e) => {
+    e.stopPropagation();
+    closeUserForm();
 })
+
 formAuthorization.addEventListener("click", () => {
-    formAuthorization.classList.toggle("hide");
+    closeUserForm();
 })
+
+//Закрыть форму через Esc
+document.addEventListener("keydown", (e) => {
+    if(e.code === 'Escape' && !formAuthorization.classList.contains('hide')) {
+        closeUserForm();
+    }
+})
+
+//Закрыть кликом вне формы
+document.addEventListener("click", (e) => {
+    const targetUserForm = e.target;
+    const openedPopupUserForm = formAuthorization.classList.contains('hide');
+    if(!openedPopupUserForm && targetUserForm !== openedPopupUserForm ) {
+        closeUserForm();
+    }
+})
+
+
+
+
+
+
 
 for (let pageList of pageLists) {
     pageList.addEventListener("click", () => {
