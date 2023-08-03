@@ -80,3 +80,32 @@ for (let pageList of pageLists) {
         pageList.classList.add('active-page');
     })
 }
+
+//Яндекс карта
+
+function init() {
+    let map = new ymaps.Map('map-content', {
+        center: [59.93850993619801,30.32843310453787],
+        zoom: 16
+    });
+
+    let placemark = new ymaps.Placemark([59.93875757513887,30.322575160049354], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: 'img/pin.png',
+        iconImageSize: [85, 140],
+        iconImageOffset: [-30, -60]
+    });
+
+    map.controls.remove('geolocationControl'); // удаляем геолокацию
+    map.controls.remove('searchControl'); // удаляем поиск
+    map.controls.remove('trafficControl'); // удаляем контроль трафика
+    map.controls.remove('typeSelector'); // удаляем тип
+    map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+    map.controls.remove('rulerControl'); // удаляем контрол правил
+    map.behaviors.disable(['scrollZoom']); // отключаем скролл карты (опционально)
+
+    map.geoObjects.add(placemark);
+}
+
+ymaps.ready(init);

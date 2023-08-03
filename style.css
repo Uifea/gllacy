@@ -669,6 +669,7 @@ input::placeholder {
     border-radius: 15px;
     color: #343434;
     font-size: 14px;
+    z-index: 2;
 }
 .adress p {
     margin: 0;
